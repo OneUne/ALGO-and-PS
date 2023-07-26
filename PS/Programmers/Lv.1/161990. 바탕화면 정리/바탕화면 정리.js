@@ -1,3 +1,7 @@
+/* The comparison [lux, luy, rdx, rdy] === [0, 0, 0, 0] is not working as expected. 
+In JavaScript, arrays are objects, and when you compare objects (including arrays) using ===, 
+it checks if they refer to the same object in memory, not if their contents are the same. */
+
 function solution(wallpaper) {
   let [lux, luy, rdx, rdy] = [0, 0, 0, 0];
   for (let y = 0; y < wallpaper.length; y++) {
