@@ -1,3 +1,5 @@
+// 첨에 걍 Splice했는데 O(N)이라 시간초과 났음
+
 function solution(arr)
 {
     var answer = [arr[0]];
