@@ -1,14 +1,19 @@
 function solution(prices) {
-    var answer = [];
-    for(let i=0; i<prices.length; i++){
-        for(let j=i+1; j<prices.length; j++){
-            if(prices[i]>prices[j]){
-                answer.push(j-i);
-                break;
-            }
-            if(j===prices.length-1) answer.push(j-i)
+    const answer = new Array(prices.length).fill(0);
+    const stack = [];
+
+    for (let i = 0; i < prices.length; i++) {
+        while (stack.length > 0 && prices[i] < prices[stack[stack.length - 1]]) {
+            const top = stack.pop();
+            answer[top] = i - top;
         }
+        stack.push(i);
     }
-    answer.push(0)
+
+    while (stack.length > 0) {
+        const top = stack.pop();
+        answer[top] = prices.length - 1 - top;
+    }
+
     return answer;
 }
