@@ -1,14 +1,15 @@
+
 class PriorityQueue {
     constructor() {
         this.heap = [];
     }
     
     enqueue(item){
-        this.heap.push(item);
+        this.heap.push(item)
         this.heapifyUp();
     }
     
-    dequeue(){
+    dequeue(){ 
         if(this.isEmpty()) return null;
         if(this.size()===1) return this.heap.pop();
         const root = this.peek();
