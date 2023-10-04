@@ -1,4 +1,3 @@
-
 function solution(citations) {
   citations.sort((a, b) => b - a);
 
